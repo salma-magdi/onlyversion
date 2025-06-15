@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شركة العملاق للتكييف والتبريد</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    body {margin:0;font-family:'Arial',sans-serif;background-color:#09a3f7;color:#000}
+    body::after {
+  content: 'معاينة — شركة العملاق';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  font-size: 150px;
+  color: rgba(255,255,255,0.07);
+  transform: translate(-50%, -50%) rotate(-30deg);
+  z-index: 999998;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+    header{background-color:#09a3f7;padding:1rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+    .logo{font-size:26px;color:#b3ecff;font-weight:bold}
+    nav{display:flex;gap:1rem}
+    nav a{color:black;font-family:'Times New Roman',Times,serif;font-weight:bolder;text-decoration:none;font-size:20px;transition:color 0.3s}
+    nav a:hover{color:#000}
+    .main-section{position:relative;width:100%;height:100vh;overflow:hidden}
+    .background-box{position:absolute;top:0;right:0;bottom:0;left:0;background-image:url('https://th.bing.com/th/id/R.b9953c8d577af2c04f3fb6497aff09ec?rik=lIjQAij7brpxWQ&pid=ImgRaw&r=0');background-size:cover;background-position:center}
+    .overlay{position:absolute;top:0;right:0;bottom:0;left:0;background-color:rgba(0,0,0,0.8)}
+    .content{position:relative;z-index:1;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;height:100%;padding:2rem;text-align:center}
+    .content h1{font-size:48px;margin-bottom:1.5rem}
+    .content p{font-size:24px}
+    .about{background-color:#000;color:#f2f4f5;margin:5rem auto;border-radius:12px;padding:5rem 3rem;max-width:1200px;text-align:center}
+    .about h2{font-size:50px;margin-bottom:2rem}
+    .about p{font-size:26px;line-height:1.9}
+    .services{background-color:#000;color:#e5eaec;margin:2rem auto 8rem;border-radius:8px;padding:2rem;max-width:1200px;text-align:center}
+    .services h2{font-size:40px;margin-bottom:2rem}
+    .service-box{display:flex;flex-wrap:wrap;align-items:center;overflow:hidden;margin-bottom:4rem;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.3);background-color:#111}
+    .service-content{flex:1;padding:2rem;text-align:right}
+    .service-content h3{font-size:40px;margin-bottom:1rem}
+    .service-content ul{list-style:none;padding:0;margin:1rem 0}
+    .service-content ul li{padding:8px 0;border-bottom:1px solid #555;font-size: 25px;}
+    .service-content .btn{padding:0.8rem 1.6rem;background-color:#09a3f7;color:black;border:none;border-radius:5px;cursor:pointer;font-weight:bold;transition:0.3s;font-size:25px;text-decoration:none;display:inline-block}
+    .service-content .btn:hover{background-color:#b3ecff;color:#000;border:1px solid #000}
+    .service-img{flex:1;min-width:300px;height:350px;background-size:cover;background-position:center}
+    footer{background-color:#000;color:#b3ecff;padding:2.5rem 1rem;margin-top:5rem}
+    .footer-container{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:2rem;max-width:1000px;margin:0 auto}
+    .footer-part{min-width:220px;display:flex;align-items:flex-start;gap:0.7rem}
+    .footer-part .icon{font-size:26px}
+    .footer-part h4{margin:0 0 0.5rem;font-size:25px}
+    .footer-part p{margin:0 0 0.3rem}
+    .footer-part a{color:#b3ecff;text-decoration:none}
+    .footer-part a:hover{text-decoration:underline}
+    .footer-copy{text-align:center;margin-top:1.5rem;border-top:1px solid #222;padding-top:1rem;font-size:14px;max-width:1000px;margin:1rem auto 0}
+
+    /* Media Queries للـ tablet وmobile */
+    @media (max-width: 768px) {
+      .logo {font-size:20px}
+      nav a {font-size:16px}
+      .content h1 {font-size:32px}
+      .content p {font-size:18px}
+      .about {margin:2rem auto;padding:2rem 1rem}
+      .about h2 {font-size:36px}
+      .about p {font-size:18px}
+      .services {margin:1rem auto;padding:1rem}
+      .services h2 {font-size:28px}
+      .service-box {flex-direction:column}
+      .service-content h3 {font-size:24px}
+      .service-content ul li {font-size:16px}
+      .service-img {min-width:100%;height:200px}
+      .footer-container {flex-direction:column;align-items:center}
+      .footer-part {width:100%;justify-content:center}
+    }
+
+    @media (max-width: 480px) {
+      .logo {font-size:18px}
+      nav {flex-direction:column;align-items:center}
+      nav a {font-size:14px;margin:0.5rem 0}
+      .content h1 {font-size:24px}
+      .content p {font-size:16px}
+      .about {margin:1rem auto;padding:1rem}
+      .about h2 {font-size:28px}
+      .about p {font-size:16px}
+      .services {margin:0.5rem auto;padding:0.5rem}
+      .services h2 {font-size:24px}
+      .service-content h3 {font-size:20px}
+      .service-content ul li {font-size:14px}
+      .service-img {height:150px}
+      .footer-part .icon {font-size:20px}
+      .footer-part h4 {font-size:16px}
+      .footer-part p {font-size:14px}
+
+      /* إضافة أيقونة للرابط في الموبايل */
+      .whatsapp-link .drop-link {
+        display: block;
+        margin-top: 0.5rem;
+        font-size: 14px;
+        color: #b3ecff;
+        text-decoration: none;
+      }
+      .whatsapp-link .drop-link i {
+        margin-left: 5px;
+      }
+    }
+  </style>
+  <script>
+  document.addEventListener('contextmenu', event => event.preventDefault());
+  document.onkeydown = function(e) {
+    if(e.keyCode==123 || (e.ctrlKey && e.shiftKey && (e.keyCode==73 || e.keyCode==74)) || (e.ctrlKey && e.keyCode==85)) {
+      return false;
+    }
+  }
+</script>
+
+</head>
+<body>
+
+<header>
+  <div class="logo">شركة العملاق</div>
+  <nav>
+    <a href="#home">الرئيسية</a>
+    <a href="#about">من نحن</a>
+    <a href="#services">خدماتنا</a>
+    <a href="#contact">تواصل معنا</a>
+  </nav>
+</header>
+
+<section id="home" class="main-section">
+  <div class="background-box"></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <h1>الشركة السعودية الأولى التي تجمع بين الجودة والسعر</h1>
+    <p>شركة العملاق متخصصة في جميع خدمات التكييف والتبريد.</p>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <h2>من نحن</h2>
+  <p>شركة العملاق، شركة سعودية بمدينة جدة، الشركة السعودية الأولى التي تجمع بين الجودة والسعر والضمان.</p>
+</section>
+
+<section id="services" class="services">
+  <h2>خدماتنا</h2>
+
+  <div class="service-box">
+    <div class="service-content">
+      <h3>خدمات التركيب</h3>
+      <ul>
+        <li>سبليت</li>
+        <li>شباك</li>
+        <li>مركزي</li>
+        <li>دكت</li>
+        <li>كاسيت</li>
+        <li>VRF</li>
+        <li>تشيلر</li>
+      </ul>
+      <a class="btn" href="https://wa.me/966592193828?text=السلام%20عليكم،%20أود%20طلب%20خدمة%20تركيب%20مكيف." target="_blank">تواصل مع الفني</a>
+    </div>
+    <div class="service-img" style="background-image:url('https://th.bing.com/th/id/OIP.xPPcvVGJMUwPAnj7wZFb4QHaE8?r=0&rs=1&pid=ImgDetMain');"></div>
+  </div>
+
+  <div class="service-box">
+    <div class="service-content">
+      <h3>خدمات الصيانة</h3>
+      <ul>
+        <li>فحص شامل للمكيف</li>
+        <li>فحص اللوحة الإلكترونية</li>
+        <li>فحص الكمبروسر</li>
+        <li>فحص التسريبات</li>
+        <li>إعادة شحن الفريون</li>
+      </ul>
+      <a class="btn" href="https://wa.me/966592193828?text=السلام%20عليكم،%20أود%20طلب%20خدمة%20صيانة%20مكيف." target="_blank">تواصل مع الفني</a>
+    </div>
+    <div class="service-img" style="background-image:url('https://th.bing.com/th/id/OIP.g_Bc5gDbz0DGO736kzbmeAHaE8?r=0&rs=1&pid=ImgDetMain');"></div>
+  </div>
+
+  <div class="service-box">
+    <div class="service-content">
+      <h3>الفحص وقطع الغيار</h3>
+      <ul>
+        <li>فلاتر جديدة</li>
+        <li>كمبروسر</li>
+        <li>لوحة تشغيل</li>
+        <li>مروحة خارجية</li>
+        <li>وحدات تحكم</li>
+      </ul>
+      <a class="btn" href="https://wa.me/966592193828?text=السلام%20عليكم،%20أود%20طلب%20خدمة%20فحص%20أو%20قطع%20غيار%20للمكيف." target="_blank">تواصل مع الفني</a>
+    </div>
+    <div class="service-img" style="background-image:url('https://th.bing.com/th/id/OIP.5OWZuK-QwgLjSwboFyi7gQHaE8?r=0&rs=1&pid=ImgDetMain');"></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-container">
+    <div class="footer-part">
+      <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+      <div>
+        <h4>الموقع</h4>
+        <p>الرياض - السعودية</p>
+        <a href="#">عرض الخريطة</a>
+      </div>
+    </div>
+    <div class="footer-part whatsapp-link">
+      <div class="icon"><i class="fab fa-whatsapp"></i></div>
+      <div>
+        <h4>واتساب</h4>
+        <p>0592193828</p>
+        <a href="https://wa.me/966592193828" target="_blank">راسلنا الآن</a>
+        <a href="https://wa.me/966592193828" class="drop-link" target="_blank">
+          <i class="fas fa-download"></i> احصل على الرابط
+        </a>
+      </div>
+    </div>
+    
+  </div>
+  <div class="footer-copy">
+    © 2025 شركة العملاق للتكييف والتبريد - جميع الحقوق محفوظة.
+  </div>
+</footer>
+
+</body>
+</html>
